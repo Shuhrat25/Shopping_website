@@ -9,10 +9,15 @@
 :root{
     --bcg-color: #fff;
     --color: #000;
-    --primary-color: #a0a0a0;
+    --primary-color: #dcdcdc;
 }
 
 body{
     width: 100%;
     min-height: 100vh;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
 }

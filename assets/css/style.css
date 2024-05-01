@@ -1,0 +1,7 @@
+nav{
+    width: 100%;
+    background: var(--primary-color);
+}
+nav .nav{
+    background: transparent;
+}
