@@ -6,13 +6,22 @@
     text-decoration: none;
 }
 
-:root{
-    --bcg-color: #fff;
+:root, .white{
+    --bcg-color: #ededed;
     --color: #000;
-    --primary-color: #dcdcdc;
+    --box-bcg-color: #fff;
+    
+    --primary-color: #2112ff;
+}
+
+.dark{
+    --bcg-color: #525252;
+    --color: #fff;
+    --box-bcg-color: #000;
 }
 
 body{
+    background: var(--bcg-color);
     width: 100%;
     min-height: 100vh;
 }
