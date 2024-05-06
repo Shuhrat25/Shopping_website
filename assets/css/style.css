@@ -1,77 +1,656 @@
-nav{
+/* GENERAL STYLES */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    width: 2.7rem;
+    height: 2.7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+.profile-photo img{
+    border-radius: 50%;
+}
+
+img {
+    /* border-radius: 50%; */
     width: 100%;
-    background: var(--box-bcg-color);
+    display: block;
 }
 
-nav .nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav .nav .logo a{
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-nav .nav .menu{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-nav .nav .menu li{
-    padding: 10px;
-    margin: 10 15px;
-    font-size: 17px;
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--border-radius);
     cursor: pointer;
+    transition: all .3s ease;
+    font-size: .9rem;
+}
+
+.bnt:hover {
+    opacity: .8;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+.text-muted {
+    color: var(--color-gray);
+}
+
+
+/* ===================NAVBAR================= */
+
+nav {
+    width: 100%;
+    background: var(--color-white);
+    padding: .7rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-bar {
+    background: var(--color-light);
+    border-radius: var(--border-radius);
+    padding: var(--search-padding);
+}
+
+.search-bar input {
+    background: transparent;
+    width: 30vw;
+    margin-left: 1rem;
+    font-size: .9rem;
+    color: var(--color-dark);
+}
+
+.search-bar input::placeholder {
+    color: var(--color-gray);
+}
+
+nav .create {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* =============================== MAIN =========================== */
+
+main {
+    position: relative;
+    top: 5.4rem;
+}
+
+main .container {
+    display: grid;
+    grid-template-columns: 18vw auto 20vw;
+    column-gap: 2rem;
     position: relative;
 }
 
-nav .nav .menu li::before{
+/* =============================== LEFT =========================== */
+
+main .container .left {
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-left);
+}
+
+main .container .left .profile {
+    padding: var(--card-padding);
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    /* width: 100%; */
+}
+
+/* =============================== SIDEBAR =========================== */
+
+.left .sidebar {
+    margin-top: 1rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+}
+
+.left .sidebar ul li {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    cursor: pointer;
+    transition: all .3s ease;
+    position: relative;
+}
+
+.left .sidebar ul li:hover {
+    background: var(--color-light);
+}
+
+.left .sidebar i {
+    font-size: 1.4rem;
+    color: var(--color-gray);
+    margin-left: 2rem;
+    position: relative;
+}
+
+.left .sidebar i .notf-count {
+    background: var(--color-danger);
+    color: #fff;
+    font-size: .7rem;
+    width: fit-content;
+    border-radius: .8rem;
+    padding: .1rem .4rem;
+    position: absolute;
+    top: -0.2rem;
+    right: -0.3rem;
+}
+
+.left .sidebar h3 {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.left .sidebar .active {
+    background: var(--color-light);
+}
+
+.left .sidebar .active::before{
     content: '';
+    display: block;
+    width: .5rem;
+    height: 100%;
+    position: absolute;
+    background: var(--color-primary);
+}
+
+.left .sidebar li:first-child.active{
+    border-top-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.left .sidebar li:last-child.active{
+    border-bottom-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.left .sidebar .active i,
+.left .sidebar .active h3 {
+    color: var(--color-primary);
+}
+
+.left .btn{
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* --------------------------- NOTIFICATION POPUP --------------------------- */
+
+.left .notf-popup{
+    position: absolute;
+    top: 0;
+    left: 110%;
+    width: 30rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60% 25%);
+    z-index: 8;
+    display: none;
+}
+
+.left .notf-popup::before{
+    content: '';
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    background: var(--color-white);
+    position: absolute;
+    left: -0.6rem;
+    transform: rotate(45deg);
+}
+
+.left .notf-popup > li a{
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.left .notf-popup small{
+    display: block;
+}
+
+/* --------------------------- MIDDLE --------------------------- */
+.middle .stories{
+    display: flex;
+    justify-content: space-between;
+    height: 12rem;
+    gap: .5rem;
+}
+
+.middle .stories .story{
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: .75rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.middle .stories .story::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary-color);
-    width: 0%;
-    height: 4px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    transition: .5s ease-in-out;
 }
 
-nav .nav .menu li a{
-    color: var(--color);
-    font-weight: 500;
-    transition: .5s ease-in-out;
+.middle .stories .story .name{
+    z-index: 2;
 }
 
-nav .nav .menu li:hover::before,
-nav .nav .menu li.active::before{
-    width: 95%;
+.middle .stories .story:nth-child(1),
+.middle .stories .story:nth-child(4){
+    background: url(../images/story-back-1.jpg) no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(2),
+.middle .stories .story:nth-child(5){
+    background: url(../images/story-back-2.jpg) no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(3),
+.middle .stories .story:nth-child(6){
+    background: url(../images/story-back-3.jpg) no-repeat center center/cover;
 }
 
-nav .nav .menu li:hover a,
-nav .nav .menu li.active a{
-    color: var(--primary-color);
+.middle .story .profile-photo{
+    width: 2rem;
+    height: 2rem;
+    align-self: center;
+    border: 3px solid var(--color-primary);
 }
 
-nav .nav .profile a{
-    font-size: 18px;
+/* --------------------------- CREATE POST --------------------------- */
+
+.middle .create-post{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background: var(--color-white);
+    padding: .4rem var(--card-padding);
+    border-radius: var(--border-radius);
+}
+
+.middle .create-post input{
+    justify-self: start;
+    width: 100%;
+    padding-left: 1rem;
+    background: transparent;
+    color: var(--color-dark);
+    margin-right: 1rem;
+}
+
+/* --------------------------- FEEDS --------------------------- */
+
+.middle .feeds .feed{
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: .85rem;
+    line-height: 1.5;
+}
+
+.middle .feed .head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle .feed .user{
+    display: flex;
+    gap: 1rem;
+}
+
+.middle .feed .photo{
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin: .7rem 0;
+}
+
+.middle .feed .action-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: .6rem;
+}
+
+.middle .feed .action-button div span i{
     cursor: pointer;
-    color: var(--color);
-    font-weight: 600;
-    transition: .5s ease-in-out;
 }
 
-nav .nav .profile a:hover{
-    color: var(--primary-color);
+.middle .liked-by{
+    display: flex;
 }
 
-nav .nav .profile .profile-menu{
+.middle .liked-by span{
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-white);
+    margin-left: -0.6rem;
+}
+
+.middle .liked-by span:first-child{
+    margin: 0;
+}
+
+.middle .liked-by p{
+    margin-left: .5rem;
+}
+
+/* --------------------------- RIGHT --------------------------- */
+
+main .container .right{
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-right);
+    bottom: 0;
+}
+
+.right .messages{
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+}
+
+.right .messages .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.right .messages i{
+    font-size: 1.4rem;
+}
+
+.right .messages .search-bar{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.right .messages .category{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.right .messages .category h6{
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid var(--color-light);
+    padding-bottom: .5rem;
+    font-size: .85rem;
+    cursor: pointer;
+}
+
+.right .messages .category .active{
+    border-color: var(--color-dark);
+}
+
+.right .messages .message-request{
+    color: var(--color-primary);
+}
+
+.right .messages .message{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: start;
+}
+
+.right .message .profile-photo{
+    position: relative;
+    overflow: visible;
+}
+
+.right .messages .message:last-child{
+    margin: 0;
+}
+
+.right .messages .message p{
+    font-size: .8rem;
+}
+
+.right .messages .message .profile-photo .active{
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    background: var(--color-success);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* --------------------------- fRIEND REQUEST --------------------------- */
+
+.right .friend-requests{
+    margin-top: 1rem;
+}
+
+.right .friend-requests h4{
+    color: var(--color-gray);
+}
+
+.right .request{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-bottom: .7rem;
+}
+
+.right .request .info{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.right .request .action{
+    display: flex;
+    gap: 1rem;
+}
+
+/* --------------------------- THEME CUSTOMIZATION --------------------------- */
+
+.customize-theme{
+    background: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
     display: none;
+}
+
+.customize-theme .card{
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+}
+
+/* --------------------------- FONT SIZE --------------------------- */
+
+.customize-theme .font-size{
+    margin-top: 5rem;
+}
+
+.customize-theme .font-size > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+}
+
+.customize-theme .choose-size{
+    background: var(--color-secondary);
+    height: .3rem;
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customize-theme .choose-size li{
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.customize-theme .choose-size li.active{
+    background: var(--color-primary);
+}
+
+/* --------------------------- FONT COLOR --------------------------- */
+
+.customize-theme .color{
+    margin-top: 2rem;
+}
+
+.customize-theme .choose-color{
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customize-theme .choose-color li{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.customize-theme .choose-color li.active{
+    border: 5px solid #fff;
+}
+
+.customize-theme .choose-color li:nth-child(1){
+    background: var(--color-primary);
+}
+
+.customize-theme .choose-color li:nth-child(2){
+    background: hsl(52, 75%, 60%);
+}
+
+.customize-theme .choose-color li:nth-child(3){
+    background: hsl(352, 75%, 60%);
+}
+
+.customize-theme .choose-color li:nth-child(4){
+    background: hsl(152, 75%, 60%);
+}
+
+.customize-theme .choose-color li:nth-child(5){
+    background: hsl(202, 75%, 60%);
+}
+
+/* --------------------------- BACKGROUND --------------------------- */
+
+.customize-theme .background{
+    margin-top: 2rem;
+    position: relative;
+}
+
+.customize-theme .choose-bg{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.customize-theme .choose-bg li{
+    padding: var(--card-padding);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: .4rem;
+    cursor: pointer;
+    border: 2px solid hsl(252, 30%, 17%);
+}
+
+.customize-theme .choose-bg li.active{
+    border: 2px solid var(--color-primary);
+}
+
+.customize-theme .choose-bg li:nth-child(1){
+    background: #fff;
+    color: #000;
+}
+
+.customize-theme .choose-bg li:nth-child(2){
+    background: hsl(252, 30%, 17%);
+    color: #fff;
+}
+
+.customize-theme .choose-bg li:nth-child(3){
+    background: hsl(252, 30%, 17%);
+    color: #fff;
+}
+
+.customize-theme .choose-bg li span{
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--color-gray);
+    border-radius: 50%;
+    margin-right: 1rem;
 }
