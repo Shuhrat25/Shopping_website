@@ -511,7 +511,9 @@ main .container .right{
 }
 
 
-.customize-theme.active
+.customize-theme.active{
+    display: grid;
+}
 
 .customize-theme .card{
     background: var(--color-white);
