@@ -510,6 +510,9 @@ main .container .right{
     display: none;
 }
 
+
+.customize-theme.active
+
 .customize-theme .card{
     background: var(--color-white);
     padding: 3rem;
