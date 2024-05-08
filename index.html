@@ -75,15 +75,15 @@
                             <i class="fas fa-handshake"></i>
                             <h3>Условия работы</h3>
                         </li>
-                        <li id="notifications">
+                        <li data-popup="notification">
                             <i class="uil uil-bell"><small class="notf-count">9+</small></i>
                             <h3>Уведомление</h3>
                         </li>
-                        <li>
+                        <li data-popup="contact">
                             <i class="fas fa-phone-alt"></i>
                             <h3>Контакты</h3>
                         </li>
-                        <li>
+                        <li data-popup="theme" class="theme">
                             <i class="uil uil-setting"></i>
                             <h3>Настройка</h3>
                         </li>
@@ -99,7 +99,7 @@
         </div>
     </main>
 
-    <div class="customize-theme">
+    <div data-popup="theme" class="popup customize-theme">
         <div class="card">
             <h2>Customize your view</h2>
             <p class="text-muted">Manage your font size, color, and background.</p>
@@ -110,11 +110,11 @@
                 <div>
                     <h6>Aa</h6>
                     <ul class="choose-size">
-                        <li class="font-size-1"></li>
-                        <li class="font-size-2 active"></li>
-                        <li class="font-size-3"></li>
-                        <li class="font-size-4"></li>
-                        <li class="font-size-5"></li>
+                        <li data-id="1" class="font-size-1"></li>
+                        <li data-id="2" class="font-size-2"></li>
+                        <li data-id="3" class="font-size-3 active"></li>
+                        <li data-id="4" class="font-size-4"></li>
+                        <li data-id="5" class="font-size-5"></li>
                     </ul>
                     <h3>Aa</h3>
                 </div>
@@ -123,26 +123,26 @@
             <div class="color">
                 <h4>Color</h4>
                 <ul class="choose-color">
-                    <li class="color-1 active"></li>
-                    <li class="color-2"></li>
-                    <li class="color-3"></li>
-                    <li class="color-4"></li>
-                    <li class="color-5"></li>
+                    <li data-primaryhue="252" class="color-1 active"></li>
+                    <li data-primaryhue="52" class="color-2"></li>
+                    <li data-primaryhue="352" class="color-3"></li>
+                    <li data-primaryhue="152" class="color-4"></li>
+                    <li data-primaryhue="202" class="color-5"></li>
                 </ul>
             </div>
             <!-- ============ PRIMARY COLOR ========= -->
             <div class="background">
                 <h4>Background</h4>
                 <ul class="choose-bg">
-                    <li class="active">
+                    <li data-bg="1" class="active">
                         <span></span>
                         <h5>Light</h5>
                     </li>
-                    <li>
+                    <li data-bg="2">
                         <span></span>
                         <h5>Dark</h5>
                     </li>
-                    <li>
+                    <li data-bg="3">
                         <span></span>
                         <h5>System</h5>
                     </li>
@@ -151,10 +151,42 @@
         </div>
     </div>
 
-    <div class="contact-menu">
-        <div class="card"></div>
+    <div data-popup="contact" class="popup contact-menu">
+        <div class="card">
+            <div class="contact-container">
+                <h2>Contact us</h2>
+                <div class="wrapper">
+                    
+                    <div class="contact-info">
+                        <h3>Contact information</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem corrupti placeat nihil ab natus eos esse dolor modi, odio cupiditate neque corporis eum voluptatibus inventore repudiandae aperiam, aliquam maxime velit.</p>
+                        <br><br><p><i class="fas fa-phone"></i>+998943620408</p>
+                        <p><i class="fas fa-envelope"></i>izzatbek.me@gmail.com </p>
+                        <p><i class="fas fa-map-marker-alt"></i>Bek street, Andijan, Uzbekistan</p>
+                        <a href="https://t.me/Deagle_ds" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://instagram.com/darkside_mrx" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com/izzatbek"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us message</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your name"> 
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="name" placeholder="Your email"> 
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="" cols="30" rows="10" placeholder="Your message"></textarea> 
+                            </div>
+                            <button type="submit ">Send message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="notification-menu">
+    <div data-popup="notification" class="popup notification-menu">
         <div class="card"></div>
     </div>
 

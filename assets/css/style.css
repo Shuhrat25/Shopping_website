@@ -166,6 +166,7 @@ main .container .left .profile {
 .left .sidebar h3 {
     margin-left: 1.5rem;
     font-size: 1rem;
+    color: var(--color-dark);
 }
 
 .left .sidebar .active {
@@ -275,6 +276,7 @@ main .container .left .profile {
     padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
+    box-shadow: 0 0 1rem var(--color-primary);
 }
 
 /* --------------------------- FONT SIZE --------------------------- */
@@ -341,7 +343,7 @@ main .container .left .profile {
 }
 
 .customize-theme .choose-color li:nth-child(1){
-    background: var(--color-primary);
+    background: hsl(252, 75%, 60%);
 }
 
 .customize-theme .choose-color li:nth-child(2){
@@ -413,4 +415,88 @@ main .container .left .profile {
     border: 2px solid var(--color-gray);
     border-radius: 50%;
     margin-right: 1rem;
+}
+
+/* ----------------------------- Contact menu ----------------------------- */
+
+.contact-menu .card{
+    width: 70%;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+.contact-container h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+
+}
+.contact-container .wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+.contact-container .contact-form{
+    text-align: left;
+
+}
+.contact-container .contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--color-dark);
+
+}
+.contact-container .form-group {
+    margin-bottom: 20px;
+}
+.contact-container input,  
+.contact-container textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    outline: none;
+}
+.contact-container input::placeholder, 
+.contact-container textarea::placeholder{
+    color: var(--color-gray);
+}
+.contact-container button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.contact-container .contact-info {
+    text-align: left;
+
+}
+.contact-container .contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--color-dark);
+}
+.contact-container .contact-info p {
+    margin-bottom: 10px;
+    color: var(--color-dark);
+    font-size: 16px;
+}
+.contact-container .contact-info i {
+    color: var(--color-primary);
+    margin-right: 10px;
+    font-size: 20px;
+}
+.contact-container .contact-info a{
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
 }
