@@ -246,7 +246,6 @@ main .container .left .profile {
 
 .customize-theme,
 .contact-menu,
-.form-menu,
 .notification-menu{
     background: rgba(255, 255, 255, 0.5);
     width: 100vw;
@@ -265,12 +264,13 @@ main .container .left .profile {
 
 .customize-theme.active,
 .contact-menu.active,
-.form-menu.active,
 .notification-menu.active{
     display: grid;
 }
 
-.customize-theme .card{
+.customize-theme .card,
+.contact-menu .card,
+.notification-menu .card{
     background: var(--color-white);
     padding: 3rem;
     border-radius: var(--card-border-radius);
