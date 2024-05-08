@@ -244,7 +244,10 @@ main .container .left .profile {
 
 /* --------------------------- THEME CUSTOMIZATION --------------------------- */
 
-.customize-theme{
+.customize-theme,
+.contact-menu,
+.form-menu,
+.notification-menu{
     background: rgba(255, 255, 255, 0.5);
     width: 100vw;
     height: 100vh;
@@ -260,7 +263,10 @@ main .container .left .profile {
 }
 
 
-.customize-theme.active{
+.customize-theme.active,
+.contact-menu.active,
+.form-menu.active,
+.notification-menu.active{
     display: grid;
 }
 
