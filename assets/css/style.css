@@ -243,6 +243,57 @@ main .container .left .profile {
 
 /* --------------------------- MIDDLE --------------------------- */
 
+.middle{
+    width: 100%;
+    min-height: auto;
+}
+
+.middle .wrap_carousel{
+    width: 100%;
+    height: 90%;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    position: relative;
+}
+
+.wrap_carousel .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+.wrap_carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wrap_carousel .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 40%;
+    left: 30%;
+    border-radius: var(--card-border-radius);
+    padding: 10px;
+    transform: translateX(-50%);
+    backdrop-filter: blur(10px);
+}
+
+.wrap_carousel .list .item .content .title{
+    font-weight: bold;
+    font-size: 5em;
+    list-style: 1.3em;
+}
+
+.wrap_carousel .list .item .content button{
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
 /* --------------------------- THEME CUSTOMIZATION --------------------------- */
 
 .customize-theme,
@@ -461,6 +512,7 @@ main .container .left .profile {
     background-color: var(--color-light);
     color: var(--color-dark);
     outline: none;
+    resize: none;
 }
 .contact-container input::placeholder, 
 .contact-container textarea::placeholder{
@@ -472,6 +524,7 @@ main .container .left .profile {
     background-color: var(--color-primary);
     color: var(--color-light);
     border: none;
+    border-radius: var(--border-radius);
     cursor: pointer;
     transition: 0.5s ease;
 }
