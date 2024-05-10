@@ -127,7 +127,7 @@ nextDom.addEventListener('click', () => showSlider('next'));
 prevDom.addEventListener('click', () => showSlider('prev'));
 
 let timeRunning = 500;
-let timeAutoNext = 5000;
+let timeAutoNext = 7000;
 let runTimeOut;
 let autoRunTime;
 
@@ -157,6 +157,7 @@ function autoNext() {
     clearTimeout(autoRunTime);
     runTimeOut = setTimeout(() => {
         nextDom.click()
+        autoNext();
     }, timeAutoNext)
 }
 
