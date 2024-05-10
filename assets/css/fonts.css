@@ -42,3 +42,8 @@ body {
     background: var(--color-light);
     overflow-x: hidden;
 }
+
+*::selection{
+    background: var(--color-primary);
+    color: white;
+}

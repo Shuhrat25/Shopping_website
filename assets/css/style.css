@@ -277,13 +277,15 @@ main .container .left .profile {
     border-radius: var(--card-border-radius);
     padding: 10px;
     transform: translateX(-50%);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
 }
 
 .wrap_carousel .list .item .content .title{
     font-weight: bold;
-    font-size: 5em;
+    font-size: 30px;
     list-style: 1.3em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
 }
 
 .wrap_carousel .list .item .content button{
@@ -292,6 +294,139 @@ main .container .left .profile {
     outline: none;
     letter-spacing: 3px;
     font-weight: 500;
+    padding: var(--btn-padding);
+    background: var(--color-primary);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+.wrap_carousel .list .item:first-child{
+    z-index: 1;
+}
+
+.wrap_carousel .list .item:first-child .title,
+.wrap_carousel .list .item:first-child .des,
+.wrap_carousel .list .item:first-child .buttons{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+
+.wrap_carousel .list .item:first-child .title{
+    animation-delay: 1.2s;
+}
+
+.wrap_carousel .list .item:first-child .des{
+    animation-delay: 1.4s;
+}
+
+.wrap_carousel .list .item:first-child .buttons{
+    animation-delay: 1.6s;
+}
+
+.wrap_carousel.next .list .item:first-child img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 60%;
+    bottom: 50px;
+    border-radius: var(--card-border-radius);
+    animation: showImage .5s linear 1 forwards;
+}
+
+.wrap_carousel.prev .list .item:nth-child(2){
+    z-index: 100;
+}
+
+.wrap_carousel.prev .list .item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage .5s linear 1 forwards;
+}
+
+.wrap_carousel.prev .list .item:nth-child(2) .content{
+    animation-delay: 0;
+    animation: outContent .5s 1s linear 1 forwards;
+}
+
+.wrap_carousel .thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 60%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.wrap_carousel.next .thumbnail{
+    transform: translateX(150px);
+    animation: transformThumbnail .5s linear 1 forwards;
+}
+
+.wrap_carousel .thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 0 10px 0 #000;
+    cursor: pointer;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.wrap_carousel .thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.wrap_carousel.next .thumbnail .item:last-child{
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+.wrap_carousel.prev .thumbnail .item:first-child{
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+.wrap_carousel .arrows{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+}
+
+.wrap_carousel .arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: monospace;
+    color: #fff;
+    font-weight: bold;
+    font-size: large;
+    transition: .3s;
+}
+
+.wrap_carousel .arrows button:hover{
+    background: var(--color-primary);
 }
 
 /* --------------------------- THEME CUSTOMIZATION --------------------------- */

@@ -122,3 +122,42 @@ chooseBg.forEach(bg =>{
 })
 
 darkModeQuery.addEventListener('change', e => detectDarkMode(e))
+
+nextDom.addEventListener('click', () => showSlider('next'));
+prevDom.addEventListener('click', () => showSlider('prev'));
+
+let timeRunning = 500;
+let timeAutoNext = 5000;
+let runTimeOut;
+let autoRunTime;
+
+function showSlider(type) {
+    let itemSlider = document.querySelectorAll('.wrap_carousel .list .item');
+    let itemThumbnail = document.querySelectorAll('.wrap_carousel .thumbnail .item');
+
+    if (type == 'next') {
+        listItemDom.appendChild(itemSlider[0]);
+        thumbnailDom.appendChild(itemThumbnail[0]);
+        carouselDom.classList.add('next');
+    } else{
+        let positionlastItem = itemSlider.length - 1;
+        listItemDom.prepend(itemSlider[positionlastItem])
+        thumbnailDom.prepend(itemThumbnail[positionlastItem])
+        carouselDom.classList.add('prev');
+    }
+
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        carouselDom.classList.remove('next');
+        carouselDom.classList.remove('prev');
+    }, timeRunning)
+}
+
+function autoNext() {
+    clearTimeout(autoRunTime);
+    runTimeOut = setTimeout(() => {
+        nextDom.click()
+    }, timeAutoNext)
+}
+
+autoNext()

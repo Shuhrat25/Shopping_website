@@ -3,7 +3,7 @@
         width: 96%;
     }
     main .container{
-        grid-template-columns: 5rem auto;
+        grid-template-columns: 5rem calc(100% - 5rem);
         gap: 1rem;
     }
     .left{
@@ -16,8 +16,14 @@
         display: none;
     }
 
-    .customize-theme .card{
+    .customize-theme .card,
+    .contact-menu .card,
+    .notification-menu .card{
         width: 80vw;
+    }
+
+    .middle{
+        min-height: 100vh;
     }
 }
 
@@ -26,7 +32,7 @@
         display: none;
     }
     main .container{
-        grid-template-columns: 0 auto;
+        grid-template-columns: 100%;
     }
     main .container .left{
         grid-column: 3/4;
@@ -48,7 +54,9 @@
         display: block;
     }
 
-    .customize-theme .card{
+    .customize-theme .card,
+    .contact-menu .card,
+    .notification-menu .card{
         width: 92vw;
     }
     
@@ -57,5 +65,9 @@
     }
     .wrapper{
         grid-template-columns: 1fr;
+    }
+
+    .middle{
+        min-height: 100vh;
     }
 }
