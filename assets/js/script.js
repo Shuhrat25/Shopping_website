@@ -23,12 +23,6 @@ popupShowHide.forEach(popup => {
     })
 })
 
-// customizeTheme.addEventListener('click', (e)=>{
-//     if (e.target.classList.contains('customize-theme')) {
-//         customizeTheme.classList.remove('active');
-//     }
-// })
-
 fontSizes.forEach(size => {    
     size.addEventListener('click', ()=>{
         let sizeData = size.dataset.id;
