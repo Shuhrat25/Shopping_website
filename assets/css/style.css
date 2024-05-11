@@ -275,6 +275,11 @@ main .container .left .profile {
     width: 95%;
     min-height: auto;
     position: relative;
+    display: none;
+}
+
+.middle.active{
+    display: block;
 }
 
 .middle .wrap_carousel {
