@@ -899,7 +899,19 @@ main .container .left .profile {
     transition: .5s;
     margin-bottom: 12px;
     cursor: pointer;
+    transition: scale .25s ease-in, opacity .25s ease-in, filter .25s ease-in;
 }
+
+.notification-menu ul li:hover {
+    scale: 1.05;
+}
+
+.notification-menu ul:has(li:hover) li:not(:hover) {
+    scale: .95;
+    opacity: .8;
+    filter: blur(4px);
+}
+
 .notification-menu ul li img{
     width: 90px;
     height: 90px;
