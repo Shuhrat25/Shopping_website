@@ -12,7 +12,8 @@
     border-radius: 50%;
     /* overflow: hidden; */
 }
-.profile-photo img{
+
+.profile-photo img {
     border-radius: 50%;
 }
 
@@ -88,7 +89,33 @@ nav .container {
 nav .create {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: .5rem;
+    width: 150px;
+}
+
+nav .create i {
+    font-size: 1.4rem;
+    color: var(--color-gray);
+    margin-left: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+nav .create i:nth-child(2) {
+    margin-right: 10px;
+}
+
+nav .create i .notf-count {
+    background: var(--color-danger);
+    color: #fff;
+    font-size: .7rem;
+    width: fit-content;
+    border-radius: .8rem;
+    padding: .1rem .4rem;
+    position: absolute;
+    bottom: -0.2rem;
+    right: -0.8rem;
+    cursor: pointer;
 }
 
 /* =============================== MAIN =========================== */
@@ -174,7 +201,7 @@ main .container .left .profile {
     background: var(--color-light);
 }
 
-.left .sidebar .active::before{
+.left .sidebar .active::before {
     content: '';
     display: block;
     width: .5rem;
@@ -183,12 +210,12 @@ main .container .left .profile {
     background: var(--color-primary);
 }
 
-.left .sidebar li:first-child.active{
+.left .sidebar li:first-child.active {
     border-top-left-radius: var(--card-border-radius);
     overflow: hidden;
 }
 
-.left .sidebar li:last-child.active{
+.left .sidebar li:last-child.active {
     border-bottom-left-radius: var(--card-border-radius);
     overflow: hidden;
 }
@@ -198,7 +225,7 @@ main .container .left .profile {
     color: var(--color-primary);
 }
 
-.left .btn{
+.left .btn {
     margin-top: 1rem;
     width: 100%;
     text-align: center;
@@ -207,7 +234,7 @@ main .container .left .profile {
 
 /* --------------------------- NOTIFICATION POPUP --------------------------- */
 
-.left .notf-popup{
+.left .notf-popup {
     position: absolute;
     top: 0;
     left: 110%;
@@ -220,7 +247,7 @@ main .container .left .profile {
     display: none;
 }
 
-.left .notf-popup::before{
+.left .notf-popup::before {
     content: '';
     width: 1.2rem;
     height: 1.2rem;
@@ -231,26 +258,26 @@ main .container .left .profile {
     transform: rotate(45deg);
 }
 
-.left .notf-popup > li a{
+.left .notf-popup>li a {
     display: flex;
     align-items: start;
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.left .notf-popup small{
+.left .notf-popup small {
     display: block;
 }
 
 /* --------------------------- MIDDLE --------------------------- */
 
-.middle{
+.middle {
     width: 95%;
     min-height: auto;
     position: relative;
 }
 
-.middle .wrap_carousel{
+.middle .wrap_carousel {
     width: 100%;
     height: 490px;
     background: var(--color-white);
@@ -259,18 +286,18 @@ main .container .left .profile {
     position: relative;
 }
 
-.wrap_carousel .list .item{
+.wrap_carousel .list .item {
     position: absolute;
     inset: 0 0 0 0;
 }
 
-.wrap_carousel .list .item img{
+.wrap_carousel .list .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.wrap_carousel .list .item .content{
+.wrap_carousel .list .item .content {
     position: absolute;
     top: 20%;
     width: 1140px;
@@ -282,7 +309,7 @@ main .container .left .profile {
     /* backdrop-filter: blur(10px); */
 }
 
-.wrap_carousel .list .item .content .title{
+.wrap_carousel .list .item .content .title {
     font-weight: bold;
     font-size: 30px;
     list-style: 1.3em;
@@ -290,7 +317,7 @@ main .container .left .profile {
     margin-bottom: 20px;
 }
 
-.wrap_carousel .list .item .content button{
+.wrap_carousel .list .item .content button {
     margin-top: 20px;
     border: none;
     outline: none;
@@ -303,32 +330,32 @@ main .container .left .profile {
     color: var(--color-white);
 }
 
-.wrap_carousel .list .item:first-child{
+.wrap_carousel .list .item:first-child {
     z-index: 1;
 }
 
 .wrap_carousel .list .item:first-child .title,
 .wrap_carousel .list .item:first-child .des,
-.wrap_carousel .list .item:first-child .buttons{
+.wrap_carousel .list .item:first-child .buttons {
     transform: translateY(50px);
     filter: blur(20px);
     opacity: 0;
     animation: showContent .5s 1s linear 1 forwards;
 }
 
-.wrap_carousel .list .item:first-child .title{
+.wrap_carousel .list .item:first-child .title {
     animation-delay: 1.2s;
 }
 
-.wrap_carousel .list .item:first-child .des{
+.wrap_carousel .list .item:first-child .des {
     animation-delay: 1.4s;
 }
 
-.wrap_carousel .list .item:first-child .buttons{
+.wrap_carousel .list .item:first-child .buttons {
     animation-delay: 1.6s;
 }
 
-.wrap_carousel.next .list .item:first-child img{
+.wrap_carousel.next .list .item:first-child img {
     width: 150px;
     height: 220px;
     position: absolute;
@@ -338,23 +365,23 @@ main .container .left .profile {
     animation: showImage .5s linear 1 forwards;
 }
 
-.wrap_carousel.prev .list .item:nth-child(2){
+.wrap_carousel.prev .list .item:nth-child(2) {
     z-index: 100;
 }
 
-.wrap_carousel.prev .list .item:nth-child(2) img{
+.wrap_carousel.prev .list .item:nth-child(2) img {
     position: absolute;
     bottom: 0;
     left: 0;
     animation: outImage .5s linear 1 forwards;
 }
 
-.wrap_carousel.prev .list .item:nth-child(2) .content{
+.wrap_carousel.prev .list .item:nth-child(2) .content {
     animation-delay: 0;
     animation: outContent .5s 1s linear 1 forwards;
 }
 
-.wrap_carousel .thumbnail{
+.wrap_carousel .thumbnail {
     position: absolute;
     bottom: 50px;
     left: 60%;
@@ -364,12 +391,12 @@ main .container .left .profile {
     gap: 20px;
 }
 
-.wrap_carousel.next .thumbnail{
+.wrap_carousel.next .thumbnail {
     transform: translateX(150px);
     animation: transformThumbnail .5s linear 1 forwards;
 }
 
-.wrap_carousel .thumbnail .item{
+.wrap_carousel .thumbnail .item {
     width: 150px;
     height: 220px;
     flex-shrink: 0;
@@ -380,27 +407,27 @@ main .container .left .profile {
     overflow: hidden;
 }
 
-.wrap_carousel .thumbnail .item img{
+.wrap_carousel .thumbnail .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: left;
 }
 
-.wrap_carousel.next .thumbnail .item:last-child{
+.wrap_carousel.next .thumbnail .item:last-child {
     width: 0;
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
 
-.wrap_carousel.prev .thumbnail .item:first-child{
+.wrap_carousel.prev .thumbnail .item:first-child {
     width: 0;
     overflow: hidden;
     opacity: 0;
     animation: showThumbnail .5s linear 1 forwards;
 }
 
-.wrap_carousel .arrows{
+.wrap_carousel .arrows {
     position: absolute;
     top: 85%;
     left: 50%;
@@ -412,7 +439,7 @@ main .container .left .profile {
     z-index: 100;
 }
 
-.wrap_carousel .arrows button{
+.wrap_carousel .arrows button {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -427,18 +454,18 @@ main .container .left .profile {
     transition: .3s;
 }
 
-.wrap_carousel .arrows button:hover{
+.wrap_carousel .arrows button:hover {
     background: var(--color-primary);
 }
 
-.middle .product_lists{
+.middle .product_lists {
     width: 100%;
     display: grid;
     margin-top: 20px;
     margin-bottom: 100px;
 }
 
-.product_lists .product_boxes .box_title{
+.product_lists .product_boxes .box_title {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -447,20 +474,20 @@ main .container .left .profile {
     margin-bottom: 10px;
 }
 
-.product_lists .product_boxes .box_title h2{
+.product_lists .product_boxes .box_title h2 {
     color: var(--color-gray);
 }
 
-.product_lists .product_boxes .box_title span{
+.product_lists .product_boxes .box_title span {
     color: var(--color-primary);
     cursor: pointer;
 }
 
-.product_lists .product_boxes .box_title span:hover{
+.product_lists .product_boxes .box_title span:hover {
     text-decoration: underline;
 }
 
-.product_lists .product_boxes ul{
+.product_lists .product_boxes ul {
     width: 100%;
     /* background: var(--color-white); */
     padding-top: var(--card-padding);
@@ -472,7 +499,7 @@ main .container .left .profile {
     column-gap: 2rem;
 }
 
-.product_lists .product_boxes ul .product{
+.product_lists .product_boxes ul .product {
     width: 180px;
     height: 250px;
     border-radius: var(--card-border-radius);
@@ -480,20 +507,20 @@ main .container .left .profile {
     position: relative;
     box-shadow: 0 0 10px var(--color-dark);
     transition: scale .25s ease-in, opacity .25s ease-in, filter .25s ease-in;
-    
+
 }
 
-.product_lists .product_boxes ul li:hover{
+.product_lists .product_boxes ul li:hover {
     scale: 1.2;
 }
 
-.product_lists .product_boxes ul:has(.product:hover) .product:not(:hover){
+.product_lists .product_boxes ul:has(.product:hover) .product:not(:hover) {
     scale: .8;
     opacity: .8;
     filter: blur(4px);
 }
 
-.product_lists .product_boxes ul li img{
+.product_lists .product_boxes ul li img {
     position: absolute;
     cursor: pointer;
     object-fit: cover;
@@ -501,12 +528,12 @@ main .container .left .profile {
     transition: .25s ease-in;
 }
 
-.product_lists .product_boxes ul li:hover img{
+.product_lists .product_boxes ul li:hover img {
     transform: scale(1);
 }
 
-.product_lists .product_boxes ul li .title{
-    width: 96%;
+.product_lists .product_boxes ul li .title {
+    width: 100%;
     position: absolute;
     bottom: -100%;
     left: 50%;
@@ -518,11 +545,11 @@ main .container .left .profile {
     padding: 5px;
 }
 
-.product_lists .product_boxes ul li:hover .title{
+.product_lists .product_boxes ul li:hover .title {
     bottom: 0;
 }
 
-.product_lists .product_boxes ul li .title .info .name{
+.product_lists .product_boxes ul li .title .info .name {
     font-size: 12px;
     font-weight: bold;
     display: -webkit-box;
@@ -531,17 +558,17 @@ main .container .left .profile {
     overflow: hidden;
 }
 
-.product_lists .product_boxes ul li .title .info .price{
+.product_lists .product_boxes ul li .title .info .price {
     font-size: 12px;
     text-align: end;
 }
 
-.product_lists .product_boxes ul li .title .info .price span{
+.product_lists .product_boxes ul li .title .info .price span {
     color: var(--color-danger);
     font-weight: bold;
 }
 
-.product_lists .product_boxes ul li .title .add_btn{
+.product_lists .product_boxes ul li .title .add_btn {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
@@ -557,7 +584,7 @@ main .container .left .profile {
 
 .customize-theme,
 .contact-menu,
-.notification-menu{
+.notification-menu {
     background: rgba(255, 255, 255, 0.5);
     width: 100vw;
     height: 100vh;
@@ -575,13 +602,13 @@ main .container .left .profile {
 
 .customize-theme.active,
 .contact-menu.active,
-.notification-menu.active{
+.notification-menu.active {
     display: grid;
 }
 
 .customize-theme .card,
 .contact-menu .card,
-.notification-menu .card{
+.notification-menu .card {
     background: var(--color-white);
     padding: 3rem;
     border-radius: var(--card-border-radius);
@@ -591,11 +618,11 @@ main .container .left .profile {
 
 /* --------------------------- FONT SIZE --------------------------- */
 
-.customize-theme .font-size{
+.customize-theme .font-size {
     margin-top: 5rem;
 }
 
-.customize-theme .font-size > div{
+.customize-theme .font-size>div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -604,7 +631,7 @@ main .container .left .profile {
     border-radius: var(--card-border-radius);
 }
 
-.customize-theme .choose-size{
+.customize-theme .choose-size {
     background: var(--color-secondary);
     height: .3rem;
     width: 100%;
@@ -614,7 +641,7 @@ main .container .left .profile {
     justify-content: space-between;
 }
 
-.customize-theme .choose-size li{
+.customize-theme .choose-size li {
     width: 1rem;
     height: 1rem;
     background: var(--color-secondary);
@@ -622,17 +649,17 @@ main .container .left .profile {
     cursor: pointer;
 }
 
-.customize-theme .choose-size li.active{
+.customize-theme .choose-size li.active {
     background: var(--color-primary);
 }
 
 /* --------------------------- FONT COLOR --------------------------- */
 
-.customize-theme .color{
+.customize-theme .color {
     margin-top: 2rem;
 }
 
-.customize-theme .choose-color{
+.customize-theme .choose-color {
     background: var(--color-light);
     padding: var(--search-padding);
     border-radius: var(--card-border-radius);
@@ -641,45 +668,45 @@ main .container .left .profile {
     justify-content: space-between;
 }
 
-.customize-theme .choose-color li{
+.customize-theme .choose-color li {
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.customize-theme .choose-color li.active{
+.customize-theme .choose-color li.active {
     border: 5px solid #fff;
 }
 
-.customize-theme .choose-color li:nth-child(1){
+.customize-theme .choose-color li:nth-child(1) {
     background: hsl(252, 75%, 60%);
 }
 
-.customize-theme .choose-color li:nth-child(2){
+.customize-theme .choose-color li:nth-child(2) {
     background: hsl(52, 75%, 60%);
 }
 
-.customize-theme .choose-color li:nth-child(3){
+.customize-theme .choose-color li:nth-child(3) {
     background: hsl(352, 75%, 60%);
 }
 
-.customize-theme .choose-color li:nth-child(4){
+.customize-theme .choose-color li:nth-child(4) {
     background: hsl(152, 75%, 60%);
 }
 
-.customize-theme .choose-color li:nth-child(5){
+.customize-theme .choose-color li:nth-child(5) {
     background: hsl(202, 75%, 60%);
 }
 
 /* --------------------------- BACKGROUND --------------------------- */
 
-.customize-theme .background{
+.customize-theme .background {
     margin-top: 2rem;
     position: relative;
 }
 
-.customize-theme .choose-bg{
+.customize-theme .choose-bg {
     position: relative;
     width: 100%;
     display: flex;
@@ -688,7 +715,7 @@ main .container .left .profile {
     gap: 1.5rem;
 }
 
-.customize-theme .choose-bg li{
+.customize-theme .choose-bg li {
     padding: var(--card-padding);
     width: 100%;
     display: flex;
@@ -700,26 +727,26 @@ main .container .left .profile {
     border: 2px solid hsl(252, 30%, 17%);
 }
 
-.customize-theme .choose-bg li.active{
+.customize-theme .choose-bg li.active {
     border: 2px solid var(--color-primary);
 }
 
-.customize-theme .choose-bg li:nth-child(1){
+.customize-theme .choose-bg li:nth-child(1) {
     background: #fff;
     color: #000;
 }
 
-.customize-theme .choose-bg li:nth-child(2){
+.customize-theme .choose-bg li:nth-child(2) {
     background: hsl(252, 30%, 17%);
     color: #fff;
 }
 
-.customize-theme .choose-bg li:nth-child(3){
+.customize-theme .choose-bg li:nth-child(3) {
     background: hsl(252, 30%, 17%);
     color: #fff;
 }
 
-.customize-theme .choose-bg li span{
+.customize-theme .choose-bg li span {
     width: 2rem;
     height: 2rem;
     border: 2px solid var(--color-gray);
@@ -729,7 +756,7 @@ main .container .left .profile {
 
 /* ----------------------------- Contact menu ----------------------------- */
 
-.contact-menu .card{
+.contact-menu .card {
     width: 70%;
 }
 
@@ -738,31 +765,37 @@ main .container .left .profile {
     margin: 0 auto;
 
 }
+
 .contact-container h2 {
     font-size: 36px;
     margin-bottom: 40px;
     color: var(--color-dark);
 
 }
-.contact-container .wrapper{
+
+.contact-container .wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 30px;
 }
-.contact-container .contact-form{
+
+.contact-container .contact-form {
     text-align: left;
 
 }
+
 .contact-container .contact-form h3 {
     font-size: 24px;
     margin-bottom: 20px;
     color: var(--color-dark);
 
 }
+
 .contact-container .form-group {
     margin-bottom: 20px;
 }
-.contact-container input,  
+
+.contact-container input,
 .contact-container textarea {
     width: 100%;
     padding: 12px;
@@ -773,10 +806,12 @@ main .container .left .profile {
     outline: none;
     resize: none;
 }
-.contact-container input::placeholder, 
-.contact-container textarea::placeholder{
+
+.contact-container input::placeholder,
+.contact-container textarea::placeholder {
     color: var(--color-gray);
 }
+
 .contact-container button {
     display: inline-block;
     padding: 12px 24px;
@@ -792,23 +827,72 @@ main .container .left .profile {
     text-align: left;
 
 }
+
 .contact-container .contact-info h3 {
     font-size: 24px;
     margin-bottom: 20px;
     color: var(--color-dark);
 }
+
 .contact-container .contact-info p {
     margin-bottom: 10px;
     color: var(--color-dark);
     font-size: 16px;
 }
+
 .contact-container .contact-info i {
     color: var(--color-primary);
     margin-right: 10px;
     font-size: 20px;
 }
-.contact-container .contact-info a{
+
+.contact-container .contact-info a {
     margin-right: 10px;
     width: 40px;
     height: 40px;
+}
+
+.notification-menu .card{
+    width: 500px;
+    max-height: 650px;
+    height: auto;
+    padding-top: 2rem;
+}
+
+.notification-menu .title{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.notification-menu .title h2{
+    color: var(--color-gray);
+}
+
+.notification-menu .title span{
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.notification-menu .title span:hover{
+    text-decoration: underline;
+}
+
+.notification-menu ul{
+    padding: var(--card-padding);
+    background: var(--color-light);
+    margin-top: 10px;
+    border-radius: var(--card-border-radius);
+}
+
+.notification-menu ul li{
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    background: var(--color-white);
+    transition: .5s;
+}
+
+.notification-menu ul li:hover{
+    background: var(--color-light);
 }
