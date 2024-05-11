@@ -892,7 +892,3 @@ main .container .left .profile {
     background: var(--color-white);
     transition: .5s;
 }
-
-.notification-menu ul li:hover{
-    background: var(--color-light);
-}
