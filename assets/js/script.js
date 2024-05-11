@@ -174,4 +174,12 @@ function autoNext() {
     }, timeAutoNext)
 }
 
+likeBtn.addEventListener('click', ()=>{
+    likeBtn.classList.toggle('far');
+    likeBtn.classList.toggle('fas');
+
+    likeBtn.classList.toggle('active');
+    console.log('click');
+})
+
 autoNext()
