@@ -588,10 +588,12 @@ main .container .left .profile {
 .middle .chat_box{
     width: 100%;
     height: auto;
+    position: relative;
 }
 .middle .chat_box ul li{
     display: flex;
     align-items: end;
+    margin-bottom: 30px;
 }
 .middle .chat_box ul li .logo{
     width: 50px;
@@ -603,6 +605,7 @@ main .container .left .profile {
 .middle .chat_box ul li .logo img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .middle .chat_box ul li .text_box h4{
@@ -626,10 +629,56 @@ main .container .left .profile {
     border-bottom-left-radius: 0;
 }
 
-.middle .chat_box ul li .text_box .text:first-child{
-    border-radius: 0;
+.middle .chat_box .text_editor{
+    width: 50%;
+    position: fixed;
+    bottom: 0;
+    left: 55%;
+    transform: translateX(-50%);
+    padding: var(--card-padding);
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 0 10px #000;
 }
 
+.middle .chat_box .text_editor textarea{
+    width: 100%;
+    height: 50px;
+    background: var(--color-light);
+    color: var(--color-dark);
+    border-radius: var(--card-border-radius);
+    resize: none;
+    padding: var(--card-padding);
+    padding-top: 10px;
+    font-size: 16px;
+    transition: .5s;
+    z-index: 90;
+}
+.middle .chat_box .text_editor textarea:focus{
+    height: 80px;
+}
+
+.middle .chat_box .text_editor .sett{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 0;
+    transition: .5s;
+    z-index: 80;
+}
+
+.middle .chat_box .text_editor textarea:focus ~ .sett{
+    overflow: visible;
+    height: 40px;
+}
+
+.middle .chat_box .text_editor .sett .icons label{
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-primary);
+}
 
 /* --------------------------- THEME CUSTOMIZATION --------------------------- */
 

@@ -47,3 +47,24 @@ body {
     background: var(--color-primary);
     color: white;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--color-light);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-white);
+    border: 2px solid var(--color-light);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--color-primary);
+}
