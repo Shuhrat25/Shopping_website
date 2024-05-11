@@ -4,6 +4,14 @@ menuBtns.forEach(btn => {
             btn2.classList.remove('active')
         })
         btn.classList.add('active')
+
+        middleItems.forEach(box => {
+            if (btn.dataset.box == box.dataset.box) {
+                box.classList.add('active');
+            } else{
+                box.classList.remove('active');
+            }
+        })
         
         popupShowHide.forEach(popup => {
             if (btn.dataset.popup == popup.dataset.popup) {
@@ -19,6 +27,11 @@ popupShowHide.forEach(popup => {
     popup.addEventListener('click', (e) => {
         if (e.target.classList.contains('popup')) {
             popup.classList.remove('active');
+            menuBtns.forEach(btn => {
+                if (btn.dataset.box == "home") {
+                    btn.click();
+                }
+            })
         }
     })
 })

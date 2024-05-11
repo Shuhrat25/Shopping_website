@@ -61,19 +61,19 @@
                 <!-- ------------------ SIDEBAR ------------------- -->
                 <div class="sidebar">
                     <ul>
-                        <li class="active">
+                        <li data-box="home" class="active">
                             <i class="uil uil-home"></i>
                             <h3>Главная</h3>
                         </li>
-                        <li>
+                        <li data-box="">
                             <i class="fas fa-shopping-basket"></i>
                             <h3>Каталог товаров</h3>
                         </li>
-                        <li id="msg-notf">
+                        <li data-box="forum" id="msg-notf">
                             <i class="uil uil-envelope"></i>
                             <h3>Форум</h3>
                         </li>
-                        <li>
+                        <li data-box="">
                             <i class="fas fa-handshake"></i>
                             <h3>Условия работы</h3>
                         </li>
@@ -95,7 +95,7 @@
             </div>
             <!-- ------------------ END OF LEFT -------------------- -->
             <!-- ============ MIDDLE ========= -->
-            <div class="middle" data-box="home">
+            <div class="middle active" data-box="home">
                 <div class="wrap_carousel">
                     <div class="list">
                         <div class="item">
@@ -130,9 +130,8 @@
                         </div>
                     </div>
                     <div class="arrows">
-                        <button id="prev">
-                            << /button>
-                                <button id="next">></button>
+                        <button id="prev"><</button>
+                        <button id="next">></button>
                     </div>
                 </div>
                 <div class="product_lists">
@@ -254,7 +253,7 @@
                     </div>
                 </div>
             </div>
-            <div class="middle active" data-box="forum">
+            <div class="middle" data-box="forum">
                 <div class="chat_box">
                     <ul>
                         <li>
