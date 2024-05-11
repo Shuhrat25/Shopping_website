@@ -884,6 +884,7 @@ main .container .left .profile {
     background: var(--color-light);
     margin-top: 10px;
     border-radius: var(--card-border-radius);
+
 }
 
 .notification-menu ul li{
@@ -891,4 +892,32 @@ main .container .left .profile {
     border-radius: var(--card-border-radius);
     background: var(--color-white);
     transition: .5s;
+    margin-bottom: 12px;
 }
+.notification-menu ul li img{
+    width: 90px;
+    height: 90px;
+    border-radius: var(--card-border-radius);
+    object-fit: cover;
+    object-position: top;
+}
+.notific-info {
+    width: 100%;
+
+}
+.notification-menu ul li .notific-name {
+    font-size: 15px;
+    text-align: start;
+}
+.notification-menu .main-noti {
+    display: grid;
+    grid-template-columns: 90px calc(100% - 90px);
+    /* gap: 60px; */
+    column-gap: 10px;
+    text-align: end;
+}
+.notific-price span {
+    color: red;
+}
+
+
