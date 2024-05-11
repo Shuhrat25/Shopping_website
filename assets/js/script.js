@@ -22,16 +22,39 @@ menuBtns.forEach(btn => {
         })
     })
 })
+
+products.forEach(item => {
+    item.addEventListener('click', (e)=>{
+        let img = item.querySelector('img').src;
+        let name = item.querySelector('.title .info .name').innerHTML;
+        let price = item.querySelector('.title .info .price').innerHTML;
+        // console.log(e, e.pageX);
+        popupShowHide.forEach(popup => {
+            if (popup.dataset.popup == 'product') {
+                popup.querySelector('img').src = img;
+                popup.querySelector('.title .info .name').innerHTML = name;
+                popup.querySelector('.title .info .price').innerHTML = price;
+                popup.style.left = e.pageX;
+                popup.style.top = e.pageY;
+                popup.classList.add('active');
+            } else{
+                popup.classList.remove('active');
+            }
+        })
+    })
+})
         
 popupShowHide.forEach(popup => {
     popup.addEventListener('click', (e) => {
         if (e.target.classList.contains('popup')) {
             popup.classList.remove('active');
-            menuBtns.forEach(btn => {
-                if (btn.dataset.box == "home") {
-                    btn.click();
-                }
-            })
+            if (popup.dataset.popup !== 'product'){
+                menuBtns.forEach(btn => {
+                    if (btn.dataset.box == "home") {
+                        btn.click();
+                    }
+                })
+            }
         }
     })
 })

@@ -3,7 +3,8 @@ const menuBtns = document.querySelectorAll('.sidebar ul li'),
       fontSizes = document.querySelectorAll('.choose-size li'),
       colorPalette = document.querySelectorAll('.choose-color li'),
       chooseBg = document.querySelectorAll('.choose-bg li'),
-      middleItems = document.querySelectorAll('.middle');
+      middleItems = document.querySelectorAll('.middle'),
+      products = document.querySelectorAll('.product');
 
 var root = document.querySelector(':root');
 const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
