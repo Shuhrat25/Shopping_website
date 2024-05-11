@@ -8,8 +8,6 @@ const menuBtns = document.querySelectorAll('.sidebar ul li'),
 var root = document.querySelector(':root');
 const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-const likeBtn = document.querySelector('i.fa-heart');
-
 const nextDom = document.getElementById('next'),
       prevDom = document.getElementById('prev'),
       carouselDom = document.querySelector('.wrap_carousel'),
