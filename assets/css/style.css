@@ -898,6 +898,7 @@ main .container .left .profile {
     background: var(--color-white);
     transition: .5s;
     margin-bottom: 12px;
+    cursor: pointer;
 }
 .notification-menu ul li img{
     width: 90px;
