@@ -71,3 +71,12 @@
         min-height: 100vh;
     }
 }
+
+@media screen and (max-width:500px) {
+    .form .column {
+        flex-wrap: wrap;
+    }
+    .form :where(.gender-option .gender) {
+        row-gap: 15px;
+    }
+}

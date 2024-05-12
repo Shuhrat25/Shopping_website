@@ -686,6 +686,134 @@ main .container .left .profile {
     color: var(--color-primary);
 }
 
+.main-box {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius);
+}
+
+.main-box h2{
+    color: var(--color-dark);
+    font-size: 18px;
+}
+
+.uslovie-raboti .title {
+    text-align: center;
+    font-size: 18px;
+    color: var(--color-dark);
+}
+.uslovie-item {
+    font-size: 16px;
+    margin: 12px;
+    color: var(--color-dark);
+}
+.main-box .container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+.main-box .container header {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    display: inline-block;
+    font-weight: 500;
+}
+.main-box .container .form {
+    margin-top: 30px;
+    width: 50%;
+}
+.form .input-box {
+    width: 100%;
+    margin-top: 20px ;
+}
+.input-box label {
+    color: var(--color-dark);
+}
+.form :where(.input-box input, .select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 8px;
+    font-size: 1rem;
+    outline: none;
+    color: var(--color-dark);
+    border: 1px solid var(--color-primary);
+    background: var(--color-light);
+    border-radius: 6px;
+    padding: 0 15px;
+}
+.input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 1px, 0, 0.1);
+}
+.form .column {
+    display: flex;
+    column-gap: 15px;
+}
+.form .gender-box {
+    margin-top: 20px;
+}
+.form .gender-box h3 {
+    color: var(--color-dark);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.form :where(.gender-option .gender){
+    display: flex;
+    align-items: center;
+    column-gap:50px ;
+    flex-wrap: wrap;
+}
+.form .gender {
+    column-gap: 5px;
+}
+.gender input {
+    accent-color: var(--color-primary);
+}
+
+.gender {
+    column-gap: 5px;
+    cursor: pointer;
+}
+
+.form:where(.gender input, .gender label) {
+    cursor: pointer;
+}
+.gender label{
+    color: var(--color-light);
+}
+.adres :where(input, .select-box){
+    margin-top: 15px;
+}
+
+.select-box select {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    color: var(--color-dark);
+    background: var(--color-light);
+    font-size: 1rem;
+}
+
+.form button {
+    height: 55px;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
 /* --------------------------- THEME CUSTOMIZATION --------------------------- */
 
 .customize-theme,
