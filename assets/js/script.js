@@ -20,6 +20,12 @@ menuBtns.forEach(btn => {
                 popup.classList.remove('active');
             }
         })
+
+        if (btn.dataset.box) {
+            localStorage.setItem('nav', btn.dataset.box);
+        } else {
+            localStorage.setItem('nav', home);
+        }
     })
 })
 
@@ -87,6 +93,8 @@ fontSizes.forEach(size => {
             root.style.setProperty('--sticky-top-left', '-12rem')
             root.style.setProperty('--sticky-top-right', '-35rem')
         }
+        
+        localStorage.setItem('font-size', sizeData);
 
         document.querySelector('html').style.fontSize = fontSize;
     })
@@ -102,6 +110,7 @@ colorPalette.forEach(color =>{
         color.classList.add('active')
 
         root.style.setProperty('--primary-color-hue', colorData)
+        localStorage.setItem('color', colorData);
     })
 })
 
@@ -151,6 +160,8 @@ chooseBg.forEach(bg =>{
         } else if (bgData == 3) {
             detectDarkMode(darkModeQuery)
         }
+
+        localStorage.setItem('bg', bgData);
     })
 })
 
@@ -194,4 +205,30 @@ function autoNext() {
     }, timeAutoNext)
 }
 
-autoNext()
+window.addEventListener('load', ()=>{
+    menuBtns.forEach(btn => {
+        if(btn.dataset.box == localStorage.getItem('nav')){
+            btn.click();
+        }
+    })
+
+    fontSizes.forEach(btn => {
+        if(btn.dataset.id == localStorage.getItem('font-size')){
+            btn.click();
+        }
+    })
+
+    colorPalette.forEach(btn => {
+        if(btn.dataset.primaryhue == localStorage.getItem('color')){
+            btn.click();
+        }
+    })
+
+    chooseBg.forEach(btn => {
+        if(btn.dataset.bg == localStorage.getItem('bg')){
+            btn.click();
+        }
+    })
+
+    autoNext();
+})

@@ -59,7 +59,7 @@ nav {
     padding: .7rem 0;
     position: fixed;
     top: 0;
-    z-index: 9999999;
+    z-index: 99999999;
 }
 
 nav .container {
