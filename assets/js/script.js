@@ -28,14 +28,11 @@ products.forEach(item => {
         let img = item.querySelector('img').src;
         let name = item.querySelector('.title .info .name').innerHTML;
         let price = item.querySelector('.title .info .price').innerHTML;
-        // console.log(e, e.pageX);
         popupShowHide.forEach(popup => {
             if (popup.dataset.popup == 'product') {
                 popup.querySelector('img').src = img;
                 popup.querySelector('.title .info .name').innerHTML = name;
                 popup.querySelector('.title .info .price').innerHTML = price;
-                popup.style.left = e.pageX;
-                popup.style.top = e.pageY;
                 popup.classList.add('active');
             } else{
                 popup.classList.remove('active');
