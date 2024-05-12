@@ -1,4 +1,68 @@
 /* GENERAL STYLES */
+.loader-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999999999;
+    background: hsl(252, 30%, 15%);
+}
+.loader-container .wrap-loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: scale(1.2);
+    width: max-content;
+    height: max-content;
+}
+
+.loader {
+    height: 50px;
+    width: 50px;
+    /* background-color: red; */
+    position: absolute;
+    animation: rotate 3.5s linear infinite;
+}
+.loader:nth-child(1) {
+    animation-delay: 0.15s;
+}
+.loader:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.loader:nth-child(3) {
+    animation-delay: 0.45s;
+}
+.loader:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.loader:nth-child(5) {
+    animation-delay: 0.75s;
+}
+.loader:nth-child(6) {
+    animation-delay: 0.9s;
+}
+
+.loader .dot {
+    height: 7px;
+    width: 7px;
+    top: 30px;
+    background-color: hsl(252, 30%, 95%);
+    border-radius: 50%;
+    position: relative;
+}
+
+
+.loader-container .text {
+    color: hsl(252, 30%, 95%);
+    position: absolute;
+    bottom: -85px;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
 
 .container {
     width: 90%;

@@ -67,3 +67,23 @@
         transform: rotate(0deg);
     }
 }
+
+@keyframes rotate {
+    30% {
+        transform: rotate(220deg);
+    }
+    40% {
+        transform: rotate(450deg);
+    }
+    75% {
+        transform: rotate(720deg);
+        opacity: 1;
+    }
+    76% {
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+}
