@@ -1,5 +1,5 @@
 menuBtns.forEach(btn => {
-    btn.addEventListener('click', ()=>{
+    btn.addEventListener('click', () => {
         menuBtns.forEach(btn2 => {
             btn2.classList.remove('active')
         })
@@ -8,15 +8,15 @@ menuBtns.forEach(btn => {
         middleItems.forEach(box => {
             if (btn.dataset.box == box.dataset.box) {
                 box.classList.add('active');
-            } else{
+            } else {
                 box.classList.remove('active');
             }
         })
-        
+
         popupShowHide.forEach(popup => {
             if (btn.dataset.popup == popup.dataset.popup) {
                 popup.classList.add('active');
-            } else{
+            } else {
                 popup.classList.remove('active');
             }
         })
@@ -30,7 +30,7 @@ menuBtns.forEach(btn => {
 })
 
 products.forEach(item => {
-    item.addEventListener('click', (e)=>{
+    item.addEventListener('click', (e) => {
         let img = item.querySelector('img').src;
         let name = item.querySelector('.title .info .name').innerHTML;
         let price = item.querySelector('.title .info .price').innerHTML;
@@ -40,33 +40,31 @@ products.forEach(item => {
                 popup.querySelector('.title .info .name').innerHTML = name;
                 popup.querySelector('.title .info .price').innerHTML = price;
                 popup.classList.add('active');
-            } else{
+            } else {
                 popup.classList.remove('active');
             }
         })
     })
 })
-        
+
 popupShowHide.forEach(popup => {
     popup.addEventListener('click', (e) => {
         if (e.target.classList.contains('popup')) {
             popup.classList.remove('active');
-            if (popup.dataset.popup !== 'product'){
-                menuBtns.forEach(btn => {
-                    if (btn.dataset.box == "home") {
-                        btn.click();
-                    }
-                })
-            }
+            menuBtns.forEach(btn => {
+                if (btn.dataset.box == localStorage.getItem('nav')) {
+                    btn.click();
+                }
+            })
         }
     })
 })
 
-fontSizes.forEach(size => {    
-    size.addEventListener('click', ()=>{
+fontSizes.forEach(size => {
+    size.addEventListener('click', () => {
         let sizeData = size.dataset.id;
         let fontSize;
-        
+
         fontSizes.forEach(size2 => {
             size2.classList.remove('active')
         })
@@ -93,15 +91,15 @@ fontSizes.forEach(size => {
             root.style.setProperty('--sticky-top-left', '-12rem')
             root.style.setProperty('--sticky-top-right', '-35rem')
         }
-        
+
         localStorage.setItem('font-size', sizeData);
 
         document.querySelector('html').style.fontSize = fontSize;
     })
 })
 
-colorPalette.forEach(color =>{
-    color.addEventListener('click', ()=>{
+colorPalette.forEach(color => {
+    color.addEventListener('click', () => {
         let colorData = color.dataset.primaryhue;
 
         colorPalette.forEach(color2 => {
@@ -124,7 +122,7 @@ const changeBg = () => {
     root.style.setProperty('--dark-color-lightness', darkColorLightness);
 }
 
-const detectDarkMode = event =>{
+const detectDarkMode = event => {
     if (event.matches) {
         darkColorLightness = '95%';
         whiteColorLightness = '20%';
@@ -138,16 +136,16 @@ const detectDarkMode = event =>{
     }
 }
 
-chooseBg.forEach(bg =>{
-    bg.addEventListener('click', ()=>{
+chooseBg.forEach(bg => {
+    bg.addEventListener('click', () => {
         let bgData = bg.dataset.bg;
-        
+
         chooseBg.forEach(bg2 => {
             bg2.classList.remove('active')
         })
         bg.classList.add('active')
 
-        if (bgData == 1){
+        if (bgData == 1) {
             darkColorLightness = '17%';
             whiteColorLightness = '100%';
             lightColorLightness = '95%';
@@ -183,7 +181,7 @@ function showSlider(type) {
         listItemDom.appendChild(itemSlider[0]);
         thumbnailDom.appendChild(itemThumbnail[0]);
         carouselDom.classList.add('next');
-    } else{
+    } else {
         let positionlastItem = itemSlider.length - 1;
         listItemDom.prepend(itemSlider[positionlastItem])
         thumbnailDom.prepend(itemThumbnail[positionlastItem])
@@ -205,27 +203,28 @@ function autoNext() {
     }, timeAutoNext)
 }
 
-window.addEventListener('load', ()=>{
+window.addEventListener('load', (e) => {
+    e.preventDefault()
     menuBtns.forEach(btn => {
-        if(btn.dataset.box == localStorage.getItem('nav')){
+        if (btn.dataset.box == localStorage.getItem('nav')) {
             btn.click();
         }
     })
 
     fontSizes.forEach(btn => {
-        if(btn.dataset.id == localStorage.getItem('font-size')){
+        if (btn.dataset.id == localStorage.getItem('font-size')) {
             btn.click();
         }
     })
 
     colorPalette.forEach(btn => {
-        if(btn.dataset.primaryhue == localStorage.getItem('color')){
+        if (btn.dataset.primaryhue == localStorage.getItem('color')) {
             btn.click();
         }
     })
 
     chooseBg.forEach(btn => {
-        if(btn.dataset.bg == localStorage.getItem('bg')){
+        if (btn.dataset.bg == localStorage.getItem('bg')) {
             btn.click();
         }
     })

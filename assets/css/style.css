@@ -887,7 +887,8 @@ main .container .left .profile {
 .customize-theme,
 .contact-menu,
 .notification-menu,
-.product_popup {
+.product_popup,
+.wrap_login {
     background: rgba(255, 255, 255, 0.5);
     width: 100vw;
     height: 100vh;
@@ -907,7 +908,8 @@ main .container .left .profile {
 .customize-theme.active,
 .contact-menu.active,
 .notification-menu.active,
-.product_popup.active {
+.product_popup.active,
+.wrap_login.active {
     transform: scale(1);
     opacity: 1;
 }
@@ -915,7 +917,8 @@ main .container .left .profile {
 .customize-theme .card,
 .contact-menu .card,
 .notification-menu .card,
-.product_popup .card {
+.product_popup .card,
+.wrap_login .card {
     background: var(--color-white);
     padding: 3rem;
     border-radius: var(--card-border-radius);
