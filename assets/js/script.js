@@ -230,5 +230,9 @@ window.addEventListener('load', ()=>{
         }
     })
 
+    setTimeout(() => {
+        loader.classList.add('hide');
+    }, 1000)
+
     autoNext();
 })

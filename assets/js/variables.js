@@ -4,7 +4,8 @@ const menuBtns = document.querySelectorAll('.sidebar ul li'),
       colorPalette = document.querySelectorAll('.choose-color li'),
       chooseBg = document.querySelectorAll('.choose-bg li'),
       middleItems = document.querySelectorAll('.middle'),
-      products = document.querySelectorAll('.product');
+      products = document.querySelectorAll('.product'),
+      loader = document.querySelector('.loader-container');
 
 var root = document.querySelector(':root');
 const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');

@@ -9,6 +9,10 @@
     z-index: 9999999999999;
     background: hsl(252, 30%, 15%);
 }
+
+.loader-container.hide{
+    display: none;
+}
 .loader-container .wrap-loader {
     position: fixed;
     top: 50%;
