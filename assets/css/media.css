@@ -18,12 +18,18 @@
 
     .customize-theme .card,
     .contact-menu .card,
-    .notification-menu .card{
+    .notification-menu .card,
+    .product_popup .card,
+    .wrap_login .card{
         width: 80vw;
     }
 
     .middle{
+        width: 100%;
         min-height: 100vh;
+    }
+    .wrap_carousel{
+        width: 100%;
     }
 }
 
@@ -56,7 +62,9 @@
 
     .customize-theme .card,
     .contact-menu .card,
-    .notification-menu .card{
+    .notification-menu .card,
+    .product_popup .card,
+    .wrap_login .card{
         width: 92vw;
     }
     
@@ -68,7 +76,11 @@
     }
 
     .middle{
+        width: 100%;
         min-height: 100vh;
+    }
+    .wrap_carousel{
+        width: 100%;
     }
 }
 
