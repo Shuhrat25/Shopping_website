@@ -23,8 +23,6 @@ menuBtns.forEach(btn => {
 
         if (btn.dataset.box) {
             localStorage.setItem('nav', btn.dataset.box);
-        } else {
-            localStorage.setItem('nav', home);
         }
     })
 })
