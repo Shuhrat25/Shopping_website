@@ -248,6 +248,10 @@ nav .create i {
     cursor: pointer;
 }
 
+nav .create i.fa-heart.active{
+    color: var(--color-danger);
+}
+
 nav .create i:nth-child(2) {
     margin-right: 10px;
 }
@@ -284,7 +288,7 @@ main .container {
 main .container .left {
     height: max-content;
     position: sticky;
-    top: var(--sticky-top-left);
+    top: calc(var(--sticky-top-left) + 120px);
     z-index: 9999999;
 }
 

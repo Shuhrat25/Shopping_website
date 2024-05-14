@@ -1,3 +1,13 @@
+function middleBoxShow(dataset) {
+    middleItems.forEach(box => {
+        if (dataset == box.dataset.box) {
+            box.classList.add('active');
+        } else {
+            box.classList.remove('active');
+        }
+    })
+}
+
 menuBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         menuBtns.forEach(btn2 => {
@@ -5,13 +15,9 @@ menuBtns.forEach(btn => {
         })
         btn.classList.add('active')
 
-        middleItems.forEach(box => {
-            if (btn.dataset.box == box.dataset.box) {
-                box.classList.add('active');
-            } else {
-                box.classList.remove('active');
-            }
-        })
+        let boxData = btn.dataset.box;
+
+        middleBoxShow(boxData);
 
         popupShowHide.forEach(popup => {
             if (btn.dataset.popup == popup.dataset.popup) {
@@ -22,9 +28,21 @@ menuBtns.forEach(btn => {
         })
 
         if (btn.dataset.box) {
-            localStorage.setItem('nav', btn.dataset.box);
+            localStorage.setItem('nav', boxData);
         }
+        
+        favorites.classList.remove('active')
     })
+})
+
+favorites.addEventListener('click', ()=>{
+    let fvData = favorites.dataset.box;
+    middleBoxShow(fvData);
+    menuBtns.forEach(btn2 => {
+        btn2.classList.remove('active')
+    })
+    favorites.classList.add('active')
+    localStorage.setItem('nav', fvData);
 })
 
 products.forEach(item => {
@@ -202,10 +220,11 @@ function autoNext() {
 }
 
 window.addEventListener('load', (e) => {
-    e.preventDefault()
     menuBtns.forEach(btn => {
         if (btn.dataset.box == localStorage.getItem('nav')) {
             btn.click();
+        } else if (localStorage.getItem('nav') == 'like'){
+            favorites.click()
         }
     })
 
@@ -239,5 +258,12 @@ mainSearch.addEventListener('input', () => {
         searchListBox.classList.add('active')
     } else {
         searchListBox.classList.remove('active')
+    }
+
+})
+
+mainSearch.addEventListener('focusout', ()=>{
+    if (document.activeElement !== mainSearch) {
+        searchListBox.classList.remove('active');
     }
 })

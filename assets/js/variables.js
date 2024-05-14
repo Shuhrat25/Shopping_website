@@ -7,7 +7,8 @@ const menuBtns = document.querySelectorAll('.sidebar ul li'),
       products = document.querySelectorAll('.product'),
       loader = document.querySelector('.loader-container'),
       mainSearch = document.getElementById('mainSearch'),
-      searchListBox = document.querySelector('.search_list');
+      searchListBox = document.querySelector('.search_list'),
+      favorites = document.querySelector('.create .fa-heart');
 
 var root = document.querySelector(':root');
 const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
