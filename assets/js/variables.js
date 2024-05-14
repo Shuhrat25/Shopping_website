@@ -5,7 +5,9 @@ const menuBtns = document.querySelectorAll('.sidebar ul li'),
       chooseBg = document.querySelectorAll('.choose-bg li'),
       middleItems = document.querySelectorAll('.middle'),
       products = document.querySelectorAll('.product'),
-      loader = document.querySelector('.loader-container');
+      loader = document.querySelector('.loader-container'),
+      mainSearch = document.getElementById('mainSearch'),
+      searchListBox = document.querySelector('.search_list');
 
 var root = document.querySelector(':root');
 const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');

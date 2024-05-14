@@ -233,3 +233,11 @@ window.addEventListener('load', (e) => {
 
     autoNext();
 })
+
+mainSearch.addEventListener('input', () => {
+    if (mainSearch.value !== '') {
+        searchListBox.classList.add('active')
+    } else {
+        searchListBox.classList.remove('active')
+    }
+})
