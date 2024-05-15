@@ -252,6 +252,10 @@ nav .create i.fa-heart.active{
     color: var(--color-danger);
 }
 
+nav .create i.fa-shopping-cart.active{
+    color: var(--color-secondary);
+}
+
 nav .create i:nth-child(2) {
     margin-right: 10px;
 }
@@ -288,7 +292,7 @@ main .container {
 main .container .left {
     height: max-content;
     position: sticky;
-    top: calc(var(--sticky-top-left) + 120px);
+    top: var(--sticky-top-left);
     z-index: 9999999;
 }
 
@@ -965,6 +969,45 @@ main .container .left .profile {
     transition: all 0.2s ease;
 }
 
+.product{
+    position: relative;
+}
+
+.product .fas{
+    position: absolute;
+    top: 10px;
+    font-size: 24px;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+}
+
+.product.like .fas.fa-heart{
+    color: var(--color-danger);
+    left: 10px;
+    display: block;
+}
+
+.product.shop .fas.fa-shopping-basket{
+    color: var(--color-secondary);
+    right: 10px;
+    display: block;
+}
+
+.middle[data-box="like"] .product{
+    display: none;
+}
+.middle[data-box="like"] .product.like{
+    display: block;
+}
+
+.middle[data-box="shop"] .product{
+    display: none;
+}
+.middle[data-box="shop"] .product.shop{
+    display: block;
+}
+
 /* --------------------------- THEME CUSTOMIZATION --------------------------- */
 
 .customize-theme,
@@ -1374,7 +1417,6 @@ main .container .left .profile {
 .product_popup .product_box .title .comment .icon i{
     margin-right: 10px;
     cursor: pointer;
-    transition: .5s;
 }
 .product_popup .product_box .title .comment .icon i.fa-heart.active{
     animation: likeEffect .5s linear 1 forwards;
