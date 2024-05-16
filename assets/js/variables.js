@@ -5,7 +5,13 @@ const menuBtns = document.querySelectorAll('.sidebar ul li'),
       chooseBg = document.querySelectorAll('.choose-bg li'),
       middleItems = document.querySelectorAll('.middle'),
       products = document.querySelectorAll('.product'),
-      loader = document.querySelector('.loader-container');
+      loader = document.querySelector('.loader-container'),
+      mainSearch = document.getElementById('mainSearch'),
+      searchListBox = document.querySelector('.search_list'),
+      favorites = document.querySelector('.create .fa-heart'),
+      shoppingCart = document.querySelector('.create .fa-shopping-cart'),
+      favoritseBox = document.querySelector('.middle[data-box="like"] .product_lists .product_boxes ul'),
+      shopBox = document.querySelector('.middle[data-box="shop"] .product_lists .product_boxes ul');
 
 var root = document.querySelector(':root');
 const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');

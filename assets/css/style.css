@@ -140,6 +140,7 @@ nav .container {
     background: var(--color-light);
     border-radius: var(--border-radius);
     padding: var(--search-padding);
+    position: relative;
 }
 
 .search-bar input {
@@ -148,6 +149,84 @@ nav .container {
     margin-left: 1rem;
     font-size: .9rem;
     color: var(--color-dark);
+}
+
+.search-bar .search_list{
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 0;
+    width: 100%;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 0 5px var(--color-dark);
+    height: 0;
+    max-height: 600px;
+    overflow: hidden;
+    padding: 0;
+    transition: .5;
+}
+
+.search-bar .search_list.active{
+    overflow: visible;
+    height: max-content;
+    padding: var(--card-padding);
+    transition: .5;
+}
+
+.search-bar .search_list ul{
+    background: var(--color-light);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    max-height: 600px;
+}
+
+.search-bar .search_list ul li{
+    /* display: none; */
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin-bottom: 10px;
+    display: flex;
+    column-gap: 10px;
+    cursor: pointer;
+    transition: scale .25s ease-in, opacity .25s ease-in, filter .25s ease-in;
+}
+
+.search-bar .search_list ul li:hover{
+    scale: 1.05;
+}
+
+.search-bar .search_list ul:has(li:hover) li:not(:hover) {
+    scale: .95;
+    opacity: .8;
+    filter: blur(4px);
+}
+
+.search-bar .search_list ul li img{
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+    border-radius: var(--card-border-radius);
+}
+
+.search-bar .search_list ul li .info{
+    width: 100%;
+}
+
+.search-bar .search_list ul li .info .name{
+    font-size: 16px;
+    color: var(--color-dark);
+}
+
+.search-bar .search_list ul li .info .price{
+    margin-top: 5px;
+    color: var(--color-dark);
+    text-align: right;
+}
+
+.search-bar .search_list ul li .info .price span{
+    color: var(--color-danger);
 }
 
 .search-bar input::placeholder {
@@ -167,6 +246,14 @@ nav .create i {
     margin-left: 2rem;
     position: relative;
     cursor: pointer;
+}
+
+nav .create i.fa-heart.active{
+    color: var(--color-danger);
+}
+
+nav .create i.fa-shopping-cart.active{
+    color: var(--color-secondary);
 }
 
 nav .create i:nth-child(2) {
@@ -882,6 +969,45 @@ main .container .left .profile {
     transition: all 0.2s ease;
 }
 
+.product{
+    position: relative;
+}
+
+.product .fas{
+    position: absolute;
+    top: 10px;
+    font-size: 24px;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+}
+
+.product.like .fas.fa-heart{
+    color: var(--color-danger);
+    left: 10px;
+    display: block;
+}
+
+.product.shop .fas.fa-shopping-basket{
+    color: var(--color-secondary);
+    right: 10px;
+    display: block;
+}
+
+.middle[data-box="like"] .product{
+    display: none;
+}
+.middle[data-box="like"] .product.like{
+    display: block;
+}
+
+.middle[data-box="shop"] .product{
+    display: none;
+}
+.middle[data-box="shop"] .product.shop{
+    display: block;
+}
+
 /* --------------------------- THEME CUSTOMIZATION --------------------------- */
 
 .customize-theme,
@@ -1291,7 +1417,6 @@ main .container .left .profile {
 .product_popup .product_box .title .comment .icon i{
     margin-right: 10px;
     cursor: pointer;
-    transition: .5s;
 }
 .product_popup .product_box .title .comment .icon i.fa-heart.active{
     animation: likeEffect .5s linear 1 forwards;
