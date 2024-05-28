@@ -87,7 +87,12 @@
                 <i class="fas fa-heart" data-box="like"></i>
                 <i class="fas fa-shopping-cart" data-box="shop"><small class="notf-count">9+</small></i>
                 <div class="profile-photo">
-                    <img src="./assets/images/profile-1.jpg" alt="">
+                    <img data-popup="login" src="./assets/images/profile-1.jpg" alt="">
+                    <div class="profile_menu">
+                        <ul>
+                            <li><i class="fas fa-sign-out-alt"></i> LogOut</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1039,6 +1044,7 @@
             </div>
         </div>
     </div>
+    <div data-popup="login" class="popup login_popup"></div>
 
     <!-- Our JS files -->
     <script src="./assets/js/variables.js"></script>
