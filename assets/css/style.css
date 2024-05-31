@@ -253,7 +253,7 @@ nav .create i.fa-heart.active{
 }
 
 nav .create i.fa-shopping-cart.active{
-    color: var(--color-secondary);
+    color: hsl(252, 75%, 60%);
 }
 
 nav .create i:nth-child(2) {
@@ -300,8 +300,7 @@ nav .create .profile-photo img.active ~ .profile_menu{
 nav .create .profile-photo .profile_menu ul{
     padding: 0.5rem;
     background: var(--color-light);
-    border-radius: var(--car
-    d-border-radius);
+    border-radius: var(--card-border-radius);
 }
 
 nav .create .profile-photo .profile_menu ul li{
@@ -1060,11 +1059,7 @@ main .container .left .profile {
 
 /* --------------------------- THEME CUSTOMIZATION --------------------------- */
 
-.customize-theme,
-.contact-menu,
-.notification-menu,
-.product_popup,
-.wrap_login {
+.popup {
     background: rgba(255, 255, 255, 0.5);
     width: 100vw;
     height: 100vh;
@@ -1081,20 +1076,12 @@ main .container .left .profile {
 }
 
 
-.customize-theme.active,
-.contact-menu.active,
-.notification-menu.active,
-.product_popup.active,
-.wrap_login.active {
+.popup.active {
     transform: scale(1);
     opacity: 1;
 }
 
-.customize-theme .card,
-.contact-menu .card,
-.notification-menu .card,
-.product_popup .card,
-.wrap_login .card {
+.popup .card {
     background: var(--color-white);
     padding: 3rem;
     border-radius: var(--card-border-radius);
@@ -1477,4 +1464,62 @@ main .container .left .profile {
     bottom: 0;
     width: 100%;
     left: 0;
+}
+
+.login_popup .card{
+    width: 400px;
+}
+
+.login_popup form{
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    transition: height .5s ease-in;
+}
+
+.login_popup form.active{
+    /* display: flex; */
+    height: auto;
+    overflow: visible;
+}
+
+.login_popup form label{
+    text-align: start;
+    font-size: 16px;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login_popup form input{
+    background: var(--color-light);
+    padding: var(--search-padding);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+.login_popup form small{
+    text-align: start;
+    font-size: 14px;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+.login_popup form small span{
+    color: hsl(252, 75%, 60%);
+    cursor: pointer;
+}
+
+.login_popup form button{
+    width: 100%;
+    padding: var(--btn-padding);
+    background: var(--color-primary);
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 0px;
 }

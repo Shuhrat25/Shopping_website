@@ -8,6 +8,36 @@ function middleBoxShow(dataset) {
     })
 }
 
+function popupShowFunc(dataset) {
+    popupShowHide.forEach(popup => {
+        if (dataset == popup.dataset.popup) {
+            popup.classList.add('active');
+        } else {
+            popup.classList.remove('active');
+        }
+    })
+}
+
+profileMenuBtn.forEach(menu => {
+    menu.addEventListener('click', ()=>{
+        profilePhoto.classList.remove('active');
+        let menuData = menu.dataset.popup;
+        popupShowFunc(menuData)
+    })
+})
+
+formLabel.forEach(label => {
+    label.addEventListener('click', ()=>{
+        form.forEach(box => {
+            if (label.dataset.login == box.dataset.login) {
+                box.classList.add('active');
+            } else {
+                box.classList.remove('active');
+            }
+        })
+    })
+})
+
 menuBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         menuBtns.forEach(btn2 => {
@@ -16,16 +46,11 @@ menuBtns.forEach(btn => {
         btn.classList.add('active')
 
         let boxData = btn.dataset.box;
+        let popupData = btn.dataset.popup;
 
         middleBoxShow(boxData);
 
-        popupShowHide.forEach(popup => {
-            if (btn.dataset.popup == popup.dataset.popup) {
-                popup.classList.add('active');
-            } else {
-                popup.classList.remove('active');
-            }
-        })
+        popupShowFunc(popupData);
 
         if (btn.dataset.box) {
             localStorage.setItem('nav', boxData);
@@ -35,6 +60,8 @@ menuBtns.forEach(btn => {
         shoppingCart.classList.remove('active');
     })
 })
+
+profilePhoto.addEventListener('click', ()=> profilePhoto.classList.toggle('active'))
 
 favorites.addEventListener('click', () => {
     let fvData = favorites.dataset.box;

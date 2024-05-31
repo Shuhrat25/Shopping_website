@@ -11,7 +11,11 @@ const menuBtns = document.querySelectorAll('.sidebar ul li'),
       favorites = document.querySelector('.create .fa-heart'),
       shoppingCart = document.querySelector('.create .fa-shopping-cart'),
       favoritseBox = document.querySelector('.middle[data-box="like"] .product_lists .product_boxes ul'),
-      shopBox = document.querySelector('.middle[data-box="shop"] .product_lists .product_boxes ul');
+      shopBox = document.querySelector('.middle[data-box="shop"] .product_lists .product_boxes ul'),
+      profilePhoto = document.querySelector('.profile-photo img'),
+      profileMenuBtn = document.querySelectorAll('.profile_menu ul li'),
+      form = document.querySelectorAll('.login_popup .card form'),
+      formLabel = document.querySelectorAll('.login_popup .card form small span');
 
 var root = document.querySelector(':root');
 const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
