@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade in knitted clothing</title>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css"
+    integrity="sha512-MQXduO8IQnJVq1qmySpN87QQkiR1bZHtorbJBD0tzy7/0U9+YIC93QWHeGTEoojMVHWWNkoCp8V6OzVSYrX0oQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <link rel="stylesheet" href="./assets/css/admin.css">
+</head>
+
+<body>
+    <div id="popup" class="popup"></div>
+    <div class="sidebar">
+        <h2 class="logo">
+            <i class="fas fa-cut"></i>
+            <div class="logo-name"><span>Trikotage</span></div>
+        </h2>
+        <ul class="side-menu side-menu-1">
+            <li class="active" data-name="zakazlar"><a href="#"><i class='bx bx-group'></i>Zakazchilar</a></li>
+            <li data-name="ishchi"><a href="#"><i class='bx bx-male-female'></i>Ishchilar</a></li>
+            <li data-name="etirozlar"><a href="#"><i class='bx bx-message-square-dots'></i>Etirozlar</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="./login.html" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#"></form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="profile">
+                <img src="./assets/images/profile-1.jpg">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main data-name="zakazlar">
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bx-calendar-check'></i>
+                    <span class="info">
+                        <h3 class="zakaz_soni">
+                            1074
+                        </h3>
+                        <p>Zakazlar Soni</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bx-dollar-circle'></i>
+                    <span class="info">
+                        <h3>
+                            $6,742
+                        </h3>
+                        <p>Foyda</p>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
+
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>Zakazlar</h3>
+                        <p data-label="zakaz" class="add-button big">+ Zakaz qo`shish</p>
+                        <p data-label="zakaz" class="add-button small">+</p>
+                    </div>
+                    <table id="myTable1">
+                        <thead>
+                            <tr>
+                                <th>Isim</th>
+                                <th>Manzil</th>
+                                <th>Telefon</th>
+                                <th>Dagovor summa</th>
+                                <th>Olingan summa</th>
+                                <th>Bajarilgan summa</th>
+                                <th>Qoldiq</th>
+                                <th hidden>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-profile="javlon">
+                                <td data-name="javlon">Javlon</td>
+                                <td>Farg`ona</td>
+                                <td>+998907779244</td>
+                                <td>100,000,000</td>
+                                <td data-name="javlon">50,000,000</td>
+                                <td>1,000,000</td>
+                                <td data-name="javlon">1 000 000</td>
+                                <td hidden>Lorem ipsum dolor sit amet.</td>
+                            </tr>
+                            <tr data-profile="javlon">
+                                <td data-name="javlon">Javlon</td>
+                                <td>Andijon</td>
+                                <td>+998901669277</td>
+                                <td>100,000,000</td>
+                                <td data-name="javlon">50,000,000</td>
+                                <td>31,000,000</td>
+                                <td data-name="javlon">1 000 000</td>
+                                <td hidden>Lorem ipsum dolor sit amet.</td>
+                            </tr>
+                            <tr data-profile="behruz">
+                                <td data-name="behruz">Behruz</td>
+                                <td>Samarqand</td>
+                                <td>+998918386592</td>
+                                <td>80,000,000</td>
+                                <td data-name="behruz">50,000,000</td>
+                                <td>61,000,000</td>
+                                <td data-name="behruz">1 000 000</td>
+                                <td hidden>Lorem ipsum dolor sit amet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <main data-name="ishchi" class="hide ishchi">
+            <!-- Insights -->
+            <ul class="insights">
+                <li data-name="tikuvchi">
+                    <i class='bx bx-cut'></i>
+                    <span class="info">
+                        <h3>
+                            42
+                        </h3>
+                        <p>Tikuvchilar</p>
+                    </span>
+                </li>
+                <li data-name="chiqmagan" class="chiqmagan">
+                    <i class='bx bxs-calendar-x'></i>
+                    <span class="info">
+                        <h3>
+                            34
+                        </h3>
+                        <p>Ishga chiqmaganlar</p>
+                    </span>
+                </li>
+            </ul>
+            <p data-label="ishchi" class="add-button big">+ Ishchi qo`shish</p>
+            <p data-label="ishchi" class="add-button small">+</p>
+
+        </main>
+
+        <main data-name="etirozlar" class="hide etirozlar">
+            <ul class="etiroz">
+                <li>
+                    <div class="names_status">
+                        <h3 class="name">Shuhrat</h3>
+                        <small class="user_status">
+                            <p class="data">14-11-2023</p>
+                            <i class='bx bx-chevron-down'></i>
+                        </small>
+                    </div>
+                    <div class="sms">hello world</div>
+                </li>
+                <li>
+                    <div class="names_status">
+                        <h3 class="name">Shuhrat</h3>
+                        <small class="user_status">
+                            <p class="data">14-11-2023</p>
+                            <i class='bx bx-chevron-down'></i>
+                        </small>
+                    </div>
+                    <div class="sms">hello world</div>
+                </li>
+                <li>
+                    <div class="names_status">
+                        <h3 class="name">Shuhrat</h3>
+                        <small class="user_status">
+                            <p class="data">14-11-2023</p>
+                            <i class='bx bx-chevron-down'></i>
+                        </small>
+                    </div>
+                    <div class="sms">hello world</div>
+                </li>
+                <li>
+                    <div class="names_status">
+                        <h3 class="name">Shuhrat</h3>
+                        <small class="user_status">
+                            <p class="data">14-11-2023</p>
+                            <i class='bx bx-chevron-down'></i>
+                        </small>
+                    </div>
+                    <div class="sms">hello world</div>
+                </li>
+            </ul>
+        </main>
+
+    </div>
+
+    <div class="person_box_container">
+        <div class="person_box" data-name="tikuvchi">
+            <div class="title">
+                <i class='bx bx-cut'></i>
+                <h2>Tikuvchilar</h2>
+            </div>
+            <ul class="info">
+                <li>
+                    <div class="name">Shuhrat</div>
+                    <a href="tel:+998907779244" class="number">+998907779244</a>
+                    <div class="delete_update_btn">
+                        <i class='bx bx-edit-alt'></i>
+                        <i class='bx bxs-trash'></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">Shuhrat</div>
+                    <a href="tel:+998907779244" class="number">+998907779244</a>
+                    <div class="delete_update_btn">
+                        <i class='bx bx-edit-alt'></i>
+                        <i class='bx bxs-trash'></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">Shuhrat</div>
+                    <a href="tel:+998907779244" class="number">+998907779244</a>
+                    <div class="delete_update_btn">
+                        <i class='bx bx-edit-alt'></i>
+                        <i class='bx bxs-trash'></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">Shuhrat</div>
+                    <a href="tel:+998907779244" class="number">+998907779244</a>
+                    <div class="delete_update_btn">
+                        <i class='bx bx-edit-alt'></i>
+                        <i class='bx bxs-trash'></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="person_box" data-name="chiqmagan">
+            <div class="title">
+                <i class='bx bxs-calendar-x'></i>
+                <h2>Ishga chiqmaganlar</h2>
+            </div>
+            <ul class="info">
+                <li>
+                    <div class="name">Shuhrat</div>
+                    <a href="tel:+998907779244" class="number">+998907779244</a>
+                    <div class="start_btn">
+                        <i class='bx bx-play'></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">Shuhrat</div>
+                    <a href="tel:+998907779244" class="number">+998907779244</a>
+                    <div class="start_btn">
+                        <i class='bx bx-play'></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">Shuhrat</div>
+                    <a href="tel:+998907779244" class="number">+998907779244</a>
+                    <div class="start_btn">
+                        <i class='bx bx-play'></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">Shuhrat</div>
+                    <a href="tel:+998907779244" class="number">+998907779244</a>
+                    <div class="start_btn">
+                        <i class='bx bx-play'></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="add_box_container">
+        <div class="add_box" data-label="ishchi">
+            <div class="title">
+                <i class='bx bx-group'></i>
+                <h2>Ishchi qo`shish</h2>
+            </div>
+            <form action="#" class="info">
+                <div class="box-wrapper">
+                    <div class="input-box">
+                        <label for="name">Isimni kiritng:</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="input-box">
+                        <label for="phone">Telefon kiritng:</label>
+                        <input type="text" id="phone">
+                    </div>
+                    <div class="input-box">
+                        <label for="adress">Manzilni kiritng:</label>
+                        <input type="text" id="adress">
+                    </div>
+                    <div class="input-box">
+                        <label for="job">Ish turini kiritng:</label>
+                        <select name="Tanlang" id="job">
+                            <option>Elektrik</option>
+                            <option>Santexnik</option>
+                            <option>Tikuvchi</option>
+                            <option>Konditer</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="week">Dam olish kunini kiritng:</label>
+                        <select name="Tanlang" id="week">
+                            <option>Dushanba</option>
+                            <option>Seshanba</option>
+                            <option>Chorshanba</option>
+                            <option>Payshanba</option>
+                            <option>Juma</option>
+                            <option>Shanba</option>
+                            <option>Yakshanba</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="old">Yoshini kiritng:</label>
+                        <input type="date" id="old">
+                    </div>
+                    <div class="input-box">
+                        <label for="old-job">Mutaxasisligini kiritng:</label>
+                        <input type="text" id="old-job">
+                    </div>
+                </div>
+                <button class="save">Saqlash</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"
+        integrity="sha512-K/oyQtMXpxI4+K0W7H25UopjM8pzq0yrVdFdG21Fh5dBe91I40pDd9A4lzNlHPHBIP2cwZuoxaUSX0GJSObvGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        new DataTable('#myTable4');
+        new DataTable('#myTable5');
+    </script>
+    <script src="./assets/js/admin.js"></script>
+    <script defer src="./assets/js/animate.js"></script>
+</body>
+
+</html>
