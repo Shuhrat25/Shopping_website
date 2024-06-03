@@ -184,7 +184,7 @@ body.dark .popup {
     transition: all 0.3s ease;
 }
 
-.sidebar .side-menu li a .bx {
+.sidebar .side-menu li a i {
     min-width: calc(60px - ((4px + 6px) * 2));
     display: flex;
     font-size: 1.6rem;
@@ -878,6 +878,60 @@ content {
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+.add_product .form_box{
+    display: grid;
+    grid-template-columns: calc(40% - 5px) calc(60% - 5px);
+    gap: 10px;
+}
+
+.add_product .form_box .file{
+    width: 100%;
+    height: 100%;
+}
+
+.add_product .form_box .file label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--primary);
+    color: var(--primary);
+    border-radius: 10px;
+    transition: .5s;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.add_product .form_box .file label span{
+    display: block;
+}
+
+.add_product .form_box .file label img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.add_product .form_box .file label:hover{
+    border: 2px solid var(--primary);
+}
+
+.add_product .form_box .right label{
+    margin: 0;
+}
+
+.add_product .form_box .right input{
+    margin-bottom: 10px;
+}
+
 .add-button {
     border: none;
     padding: 10px 15px;
@@ -895,10 +949,19 @@ content {
     padding: 4px 16px;
 }
 
-main.ishchi .add-button {
+main.ishchi .add-button,
+main.maxsulot .add-button {
     position: fixed;
     right: 20px;
     bottom: 20px;
+    z-index: 99999;
+    opacity: 0.5;
+    transition: .5s;
+}
+
+main.ishchi .add-button:hover,
+main.maxsulot .add-button:hover {
+    opacity: 1;
 }
 
 .add-button.add-btn {
@@ -1051,4 +1114,132 @@ table tbody tr.hide{
     background: var(--light-primary);
 }
 
+.maxsulot .product_lists {
+    width: 100%;
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
 
+.maxsulot[data-name="maxsulot"] .product_lists{
+    margin: 0;
+}
+
+.product_lists .product_boxes .box_title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.product_lists .product_boxes .box_title h2 {
+    color: var(--color-gray);
+}
+
+.product_lists .product_boxes .box_title span {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.product_lists .product_boxes .box_title span:hover {
+    text-decoration: underline;
+}
+
+.product_lists .product_boxes ul {
+    width: 100%;
+    /* background: var(--color-white); */
+    padding-top: var(--card-padding);
+    padding-bottom: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 2rem;
+}
+
+.product_lists .product_boxes ul .product {
+    width: 180px;
+    height: 250px;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 10px var(--color-dark);
+    transition: scale .25s ease-in, opacity .25s ease-in, filter .25s ease-in;
+
+}
+
+.product_lists .product_boxes ul li:hover {
+    scale: 1.2;
+}
+
+.product_lists .product_boxes ul:has(.product:hover) .product:not(:hover) {
+    scale: .8;
+    opacity: .8;
+    filter: blur(4px);
+}
+
+.product_lists .product_boxes ul li img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    object-fit: cover;
+    transform: scale(1.2);
+    transition: .25s ease-in;
+}
+
+.product_lists .product_boxes ul li:hover img {
+    transform: scale(1);
+}
+
+.product_lists .product_boxes ul li .title {
+    width: 100%;
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .25s ease-in;
+    border-top-left-radius: var(--card-border-radius);
+    border-top-right-radius: var(--card-border-radius);
+    background: var(--color-white);
+    padding: 5px;
+}
+
+.product_lists .product_boxes ul li:hover .title {
+    bottom: 0;
+}
+
+.product_lists .product_boxes ul li .title .info .name {
+    font-size: 12px;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product_lists .product_boxes ul li .title .info .price {
+    font-size: 12px;
+    text-align: end;
+}
+
+.product_lists .product_boxes ul li .title .info .price span {
+    color: var(--color-danger);
+    font-weight: bold;
+}
+
+.product_lists .product_boxes ul li .title .add_btn {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 12px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}

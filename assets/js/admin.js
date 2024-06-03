@@ -16,7 +16,9 @@ const sideLinks1 = document.querySelectorAll('.sidebar .side-menu-1 li'),
       zakazSoni = document.querySelector('.zakaz_soni'),
       tableList = document.querySelector('#myTable1 tbody'),
       boxPrays = document.querySelectorAll('.box_prays li'),
-      tableBox = document.querySelectorAll('.table_box .table');
+      tableBox = document.querySelectorAll('.table_box .table'),
+      inputFile = document.querySelector('#file'),
+      fileLabel = document.querySelector('label[for="file"]');
 
 sideLinks1.forEach(item => {
     item.addEventListener('click', () => {
@@ -34,6 +36,19 @@ sideLinks1.forEach(item => {
         })
     })
 });
+
+inputFile.addEventListener('change', (e)=> {
+    let image = fileLabel.querySelector('img');
+    let span = fileLabel.querySelector('span')
+    image.src = URL.createObjectURL(inputFile.files[0])
+    if (image.src !== "") {
+        image.style.display = 'block';
+        span.style.display = 'none';
+    } else{
+        span.style.display = 'block';
+        image.style.display = 'none';
+    }
+})
 
 boxPrays.forEach(item => {
     item.addEventListener('click', ()=>{
