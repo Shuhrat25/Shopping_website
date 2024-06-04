@@ -381,3 +381,9 @@ mainSearch.addEventListener('focusout', () => {
         searchListBox.classList.remove('active');
     }
 })
+
+profilePhoto.addEventListener('focusout', () => {
+    if (document.activeElement !== profilePhoto) {
+        profilePhoto.classList.remove('active');
+    }
+})
